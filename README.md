@@ -1,1 +1,267 @@
-# BHM-Family
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BHM Family</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.15);
+      --glass-border: rgba(255, 255, 255, 0.3);
+      --glass-highlight: rgba(255, 255, 255, 0.6);
+      --accent: #ff007f;
+      --text-light: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-light);
+      background: #000;
+      overflow-x: hidden;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 100vh;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero img.bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.85));
+      z-index: -1;
+    }
+
+    /* NAV BAR */
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(50px) saturate(250%);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 12px 24px;
+      box-shadow: inset 0 1px 0 var(--glass-highlight), 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 900;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    button {
+      background: #fff;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:active {
+      background: gray;
+      color: white;
+    }
+
+    /* HERO CONTENT */
+    .hero-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-content p {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .hero-content h1 {
+      font-size: 4.5rem;
+      font-weight: 900;
+    }
+
+    /* UPCOMING BUTTON */
+    .upcoming-btn {
+      display: block;
+      margin: 40px auto;
+      padding: 14px 28px;
+      background: #fff;
+      color: #000;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-align: center;
+      max-width: 250px;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid var(--glass-highlight);
+      margin: 30px auto;
+      max-width: 80%;
+    }
+
+    .events-heading {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    /* GRID */
+    .section {
+      padding: 30px 20px;
+    }
+
+    .grid-5 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      max-width: 2000px;
+      margin: auto;
+    }
+
+    .glass-card {
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-align: center;
+      backdrop-filter: blur(25px) saturate(150%);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      transition: transform 0.2s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .glass-card a {
+      color: var(--text-light);
+      text-decoration: none;
+    }
+
+    .glass-card.others a {
+      color: var(--accent);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.6rem;
+      }
+      .hero-content p {
+        font-size: 1.3rem;
+      }
+      .nav-bar {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <img class="bg" src="C:\Users\udula\Downloads\d.png" alt="Background">
+
+    <div class="nav-bar">
+      <div class="logo">BHM Family</div>
+
+    <nav>
+      <a href="#">About</a>
+    </nav>
+
+      <a href="file:///C:/Users/udula/OneDrive/Documents/VS%20,,/All%20Members.html">
+        <button type="button">All Members</button>
+      </a>
+    </div>
+
+    <div class="hero-content">
+      <p>The Official</p>
+      <h1>BHM Family's Website</h1>
+    </div>
+  </section>
+
+  <a href="#events" class="upcoming-btn">Upcoming Events</a>
+  <hr>
+  <section class="hero">
+    <img class="bg" src="C:\Users\udula\Downloads\glass-multicolor-5k-3840x2160-11963.png"alt="Background">
+
+  <div class="events-heading" id="events">Events</div>
+
+  <section class="section">
+    <div class="grid-5">
+      <div class="glass-card"><a href="file:///C:/Users/udula/OneDrive/Documents/VS%20,,/Images.html">31st Night Party</a></div>
+      <div class="glass-card"><a href="#">Official Shirt</a></div>
+      <div class="glass-card"><a href="file:///C:/Users/udula/OneDrive/Documents/VS%20,,/i.html">April Festival</a></div>
+      <div class="glass-card"><a href="file:///C:/Users/udula/OneDrive/Documents/VS%20,,/m.html">Trip to Anuradhapura</a></div>
+      <div class="glass-card others"><a href="#">Others ➔</a></div>
+    </div>
+  </section>
+<br>
+<hr>
+<br>
+  <!-- FOOTER -->
+<footer style="
+
+  border-radius: 16px;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+">
+  <p style="margin-bottom: 8px; font-weight: 600;">© 2026 The Official BHM Family's Website. All Rights Reserved.</p>
+  <p style="font-weight: 400;">Developed by Udula Herath</p>
+</footer>
+
+</body>
+</html>
