@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BHM Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.15);
+      --glass-border: rgba(255, 255, 255, 0.3);
+      --glass-highlight: rgba(255, 255, 255, 0.6);
+      --accent: #ff007f;
+      --text-light: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-light);
+      min-height: 100vh;
+      background: 
+        linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+        url("C:/Users/udula/Downloads/d.png"); /* 🔁 change image */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* HEADER */
+    .nav-bar {
+      margin: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(50px) saturate(250%);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 12px 24px;
+      box-shadow: inset 0 1px 0 var(--glass-highlight),
+                  0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 900;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    button {
+      background: #fff;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* HEADER TEXT ABOVE GALLERY */
+    .gallery-header {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 900;
+      margin: 40px 0 20px;
+      letter-spacing: 1px;
+    }
+
+    /* GALLERY SECTION */
+    .gallery-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    /* CENTER ALL CARDS HORIZONTALLY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 260px));
+      gap: 30px;
+      max-width: 2000px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .photo-card {
+      width: 280px;
+      backdrop-filter: blur(25px) saturate(150%);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.25s ease;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    .photo-card p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-bar {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+      }
+      .photo-card {
+        width: 200px;
+      }
+      .photo-card img {
+        height: 240px;
+      }
+      .gallery-header {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <div class="nav-bar">
+    <div class="logo">All Members</div>
+
+    <nav>
+      <a href="#">About</a>
+      <a href="#">Projects</a>
+      <a href="#">Contacts</a>
+    </nav>
+
+    <a href=file:///C:/Users/udula/OneDrive/Documents/VS%20,,/BHM.html>
+      <button type="button">Home</button>
+    </a>
+  </div>
+
+  <!-- HEADER TEXT -->
+  <h1 class="gallery-header">All Members</h1>
+
+  <!-- GALLERY -->
+  <section class="gallery-section">
+    <div class="gallery-grid">
+
+      <div class="photo-card">
+        <img src="C:\Users\udula\Downloads\WhatsApp Image 2026-01-03 at 06.55.51 (2).jpeg" alt="Sandali Wasundara">
+        <p>Sandali Wasundara</p>
+      </div>
+
+      <div class="photo-card">
+        <img src="C:\Users\udula\Downloads\WhatsApp Image 2026-01-03 at 06.55.51.jpeg" alt="Prashantha Sandaruwan">
+        <p>Prashantha Sandaruwan</p>
+      </div>
+
+      <div class="photo-card">
+        <img src="C:\Users\udula\Downloads\WhatsApp Image 2026-01-03 at 06.55.51 (1).jpeg" alt="Umaya Sanduni">
+        <p>Umaya Sanduni</p>
+      </div>
+
+      <div class="photo-card">
+        <img src="C:\Users\udula\Downloads\NIKE+DUNK+LOW+(GS).avif" alt="Danindu Samudhitha">
+        <p>Danindu Samudhitha</p>
+      </div>
+
+      <div class="photo-card">
+        <img src="C:\Users\udula\OneDrive\Pictures\Trip to anuradhapura\IMG_1776.JPG" alt="Udula Deepana">
+        <p>Udula Deepana</p>
+      </div>
+
+      <div class="photo-card">
+        <img src="C:\Users\udula\OneDrive\Pictures\Trip to anuradhapura\IMG_1804.JPG" alt="Chanidu Charuka">
+        <p>Chanidu Charuka</p>
+      </div>
+
+      <div class="photo-card">
+        <img src="C:\Users\udula\Downloads\WhatsApp Image 2026-01-03 at 06.55.51 (3).jpeg" alt="Oshada Viduravi">
+        <p>Oshada Viduravi</p>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

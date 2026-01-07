@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BHM Media</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.15);
+      --glass-border: rgba(255, 255, 255, 0.3);
+      --glass-highlight: rgba(255, 255, 255, 0.6);
+      --accent: #ff007f;
+      --text-light: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-light);
+      min-height: 100vh;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+        url("C:/Users/udula/Downloads/d.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* NAV BAR */
+    .nav-bar {
+      margin: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(50px) saturate(250%);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 12px 24px;
+      box-shadow: inset 0 1px 0 var(--glass-highlight),
+                  0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 900;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    button {
+      background: #fff;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* CENTER SECTION */
+    .media-section {
+      min-height: calc(100vh - 120px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 280px);
+      gap: 40px;
+    }
+
+    .media-card {
+      height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-radius: 20px;
+      backdrop-filter: blur(25px) saturate(150%);
+      border: 1px solid var(--glass-border);
+      color: white;
+      text-decoration: none;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease;
+    }
+
+    .media-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
+    .media-card span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .media-card:hover {
+      transform: translateY(-8px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .media-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div class="nav-bar">
+    <div class="logo">Images & Videos</div>
+
+
+
+    <a href="BHM.html">
+      <button>Home</button>
+    </a>
+  </div>
+
+  <!-- CENTER BOXES -->
+  <section class="media-section">
+    <div class="media-grid">
+
+      <a href="file:///C:/Users/udula/OneDrive/Documents/VS%20,,/31.html" class="media-card"
+         style="background-image: url('C:/Users/udula/Downloads/photos-bg.jpg');">
+        <span>Images</span>
+      </a>
+
+      <a href="file:///C:/Users/udula/OneDrive/Documents/VS%20,,/Videos.html" class="media-card"
+         style="background-image: url('C:/Users/udula/Downloads/videos-bg.jpg');">
+        <span>Videos</span>
+      </a>
+
+      
+
+    </div>
+  </section>
+
+</body>
+</html>

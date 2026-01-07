@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BHM Family Gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --glass-bg: rgba(255,255,255,0.15);
+  --glass-border: rgba(255,255,255,0.3);
+  --glass-highlight: rgba(255,255,255,0.6);
+  --accent: #ff007f;
+  --text-light: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-light);
+  min-height: 100vh;
+  background: 
+    linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+    url("C:/Users/udula/Downloads/d.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.85));
+  z-index: -1;
+}
+
+/* NAV */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(40px) saturate(200%);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 12px 24px;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+button {
+  background: #fff;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* HERO TEXT */
+.hero-content {
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ================= GALLERY ================= */
+.gallery-section {
+  padding: 60px 30px;
+  color: var(--text-light);
+}
+
+.gallery-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.gallery-title h2 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.gallery-title p {
+  color: #ddd;
+  margin-top: 10px;
+}
+
+.gallery {
+  column-count: 5;
+  column-gap: 20px;
+  max-width: 1600px;
+  margin: auto;
+}
+
+@media (max-width: 1200px) { .gallery { column-count: 4; } }
+@media (max-width: 900px)  { .gallery { column-count: 3; } }
+@media (max-width: 600px)  { .gallery { column-count: 2; } }
+
+.image-box {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  padding: 5px;
+}
+
+.image-box video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  transition: transform 0.3s ease;
+}
+
+.image-box:hover video {
+  transform: scale(1.03);
+}
+
+/* ================= LIGHTBOX ================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox video {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 14px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  backdrop-filter: blur(30px);
+  background: rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  text-align: center;
+  padding: 25px;
+}
+</style>
+</head>
+
+<body>
+<br>
+
+<!-- HERO -->
+<div class="nav-bar">
+  <div class="logo">31st Night Party Videos</div>
+
+  <a href="images.html">
+    <button>31st Night Party</button>
+  </a>
+</div>
+<br>
+<hr>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="gallery-title">
+    <h2>31st Night Party Videos</h2>
+    <p>Memories in different styles</p>
+  </div>
+  <hr><br>
+
+  <div class="gallery">
+    <div class="image-box">
+      <video src="C:\Users\udula\Downloads\WhatsApp Video 2026-01-01 at 09.35.28.mp4" onclick="openLightbox(this)" muted></video>
+    </div>
+    <div class="image-box">
+      <video src="C:\Users\udula\Downloads\WhatsApp Video 2026-01-01 at 09.35.25.mp4"onclick="openLightbox(this)" muted></video>
+    </div>
+
+    <!-- Add more videos as needed -->
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="close">&times;</span>
+  <video id="lightboxVideo" controls autoplay></video>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p style="font-weight:600;">© 2026 The Official BHM Family's Website</p>
+  <p>Developed by Udula Herath</p>
+</footer>
+
+<script>
+function openLightbox(video) {
+  const lbVideo = document.getElementById("lightboxVideo");
+  lbVideo.src = video.src;
+  lbVideo.play();
+  document.getElementById("lightbox").classList.add("active");
+}
+
+function closeLightbox() {
+  const lbVideo = document.getElementById("lightboxVideo");
+  lbVideo.pause();
+  lbVideo.src = "";
+  document.getElementById("lightbox").classList.remove("active");
+}
+</script>
+
+</body>
+</html>
